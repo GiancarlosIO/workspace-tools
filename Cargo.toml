@@ -1,0 +1,21 @@
+[package]
+edition = "2021"
+name = "workspace-tools"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+clap = { version = "4.5.4", features = ["derive"] }
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "2.12.2", default-features = false, features = ["napi4", "tokio_rt"] }
+napi-derive = "2.12.2"
+tokio = { version = "1.38.0", features = ["default", "fs"] }
+
+[build-dependencies]
+napi-build = "2.0.1"
+
+[profile.release]
+lto = true
+strip = "symbols"

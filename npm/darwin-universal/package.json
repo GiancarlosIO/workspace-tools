@@ -1,0 +1,15 @@
+{
+  "name": "@giancarlosio/workspace-tools-darwin-universal",
+  "version": "0.0.0",
+  "os": [
+    "darwin"
+  ],
+  "main": "workspace-tools.darwin-universal.node",
+  "files": [
+    "workspace-tools.darwin-universal.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}
