@@ -7,13 +7,9 @@ extern crate napi_derive;
 
 mod cli;
 
-use crate::cli::Cli;
+use crate::cli::{create_cli, run};
 
 #[napi]
 pub async fn run_cli(args: Vec<String>) -> Result<()> {
-  let cli = Cli::new(args)?;
-
-  cli.run();
-
-  Ok(())
+  create_cli(args).and_then(run)
 }
